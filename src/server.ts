@@ -1,12 +1,12 @@
 import express from "express";
-import { addAbortSignal } from "stream";
+import { routes } from "./routes";
 
 const app = express();
 
-app.get('/users', (req, res) => {
-    return res.send('Hello World')
-})
+app.use(express.json())
+
+app.use(routes)
 
 app.listen(3333, () => {
-    console.log('hello worl')
+    console.log('hello world')
 })
